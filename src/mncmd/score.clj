@@ -13,13 +13,20 @@
         reader (org.wmn4j.io.musicxml.MusicXmlReader/readerFor path-obj)]
     (.readScore reader)))
 
-(defn- get-attribute [score attribute]
+(defn- attribute-value [score attribute]
   (let [attr-opt (.getAttribute score attribute)]
     (if (.isPresent attr-opt)
       (.get attr-opt)
       "")))
 
+(defn- measure-count [score]
+  (let [m (.getFullMeasureCount score)]
+    (if (.hasPickupMeasure score)
+      (str m " (+ pickup)")
+      (str m))))
 
 (defn attributes [score]
-  (hash-map :title (get-attribute score org.wmn4j.notation.Score$Attribute/TITLE)
-            :movement-title (get-attribute score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)))
+  (hash-map :title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
+            :movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
+            :part-count (.getPartCount score)
+            :measure-count (measure-count score)))
