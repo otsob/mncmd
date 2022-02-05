@@ -1,9 +1,9 @@
 (ns mncmd.score
-  (:require (java.nio.file.Paths)
-            (java.net.URI)
-            (java.util.Optional)
-            (org.wmn4j.notation.Score)
-            (org.wmn4j.io.MusicXmlReader))
+  (:import [java.nio.file Paths]
+           [java.net URI]
+           [java.util Optional]
+           [org.wmn4j.notation Score]
+           [org.wmn4j.io.musicxml MusicXmlReader])
   (:gen-class))
 
 
