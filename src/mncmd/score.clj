@@ -29,4 +29,6 @@
   (hash-map :title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
             :movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
             :part-count (.getPartCount score)
-            :measure-count (measure-count score)))
+            :measure-count (measure-count score)
+            :composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
+            :arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))

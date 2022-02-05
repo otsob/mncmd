@@ -7,12 +7,16 @@
 
 (defn- stat-row [attr-name attr-value]
   (let [whitespace (str/join (repeat (- indent-depth (count attr-name)) " "))]
-    (str attr-name ":" whitespace attr-value "\n")))
+    (if (str/blank? (str attr-value))
+      ""
+      (str attr-name ":" whitespace attr-value "\n"))))
 
 (defn- basic-stat [score]
   (let [score-attr (score/attributes score)]
     (str (stat-row "Title" (:title score-attr))
          (stat-row "Movement-title" (:movement-title score-attr))
+         (stat-row "Composer" (:composer score-attr))
+         (stat-row "Arranger" (:arranger score-attr))
          (stat-row "Part count" (:part-count score-attr))
          (stat-row "Measure count" (:measure-count score-attr)))))
 
