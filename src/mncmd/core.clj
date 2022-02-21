@@ -9,10 +9,10 @@
                  :description "Command line tool for extracting information from music notation files "
                  :version     "0.1"}
    :commands    [{:command     "stat"
-                  :description ["Shows file information for a music notation file"
-                                ""
-                                ""]
-                  :opts        []
+                  :description "Shows file information for a music notation file"
+                  :opts        [{:as     "Counts"
+                                 :option "counts"
+                                 :type   :with-flag}]
                   :runs        stat/print-stat}]})
 
 (defn -main

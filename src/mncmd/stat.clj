@@ -16,9 +16,15 @@
     (str (stat-row "Title" (:title score-attr))
          (stat-row "Movement-title" (:movement-title score-attr))
          (stat-row "Composer" (:composer score-attr))
-         (stat-row "Arranger" (:arranger score-attr))
-         (stat-row "Part count" (:part-count score-attr))
-         (stat-row "Measure count" (:measure-count score-attr)))))
+         (stat-row "Arranger" (:arranger score-attr)))))
+
+
+(defn- count-stat [score]
+  (let [counts (score/counts score)]
+    (str (stat-row "Part count" (:part-count counts))
+         (stat-row "Measure count" (:measure-count counts))
+         (stat-row "Note count" (:note-count counts)))))
+
 
 (defn print-stat [args]
   (let [path (get (args :_arguments) 0)
@@ -26,4 +32,6 @@
     (do
       (print (stat-row "Score path" path))
       (print (basic-stat score))
+      (when (:counts args)
+        (print (count-stat score)))
       (println))))

@@ -2,10 +2,9 @@
   (:import [java.nio.file Paths]
            [java.net URI]
            [java.util Optional]
-           [org.wmn4j.notation Score]
+           [org.wmn4j.notation Score Note Chord Rest]
            [org.wmn4j.io.musicxml MusicXmlReader])
   (:gen-class))
-
 
 ;; TODO: Ensure that the paths are handled correctly (problems with whitespaces etc.
 (defn read-score [path]
@@ -28,7 +27,26 @@
 (defn attributes [score]
   (hash-map :title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
             :movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
-            :part-count (.getPartCount score)
-            :measure-count (measure-count score)
             :composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
             :arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))
+
+(defn score->seq [score]
+  (iterator-seq (.partwiseIterator score)))
+
+(defn- chords [dur-seq]
+  (filter #(instance? org.wmn4j.notation.Chord %) dur-seq))
+
+(defn- notes [dur-seq]
+  (filter #(instance? org.wmn4j.notation.Note %) dur-seq))
+
+(defn- note-count [score]
+  (let [dur-seq (score->seq score)]
+    (+ (count (notes dur-seq))
+       (apply + (map #(.getNoteCount %) (chords dur-seq))))))
+
+(defn counts [score]
+  (hash-map
+   :part-count (.getPartCount score)
+   :measure-count (measure-count score)
+   :note-count (note-count score)))
+
