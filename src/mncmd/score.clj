@@ -40,6 +40,9 @@
 (defn- notes [dur-seq]
   (filter #(instance? org.wmn4j.notation.Note %) dur-seq))
 
+(defn- rests [dur-seq]
+  (filter #(instance? org.wmn4j.notation.Rest %) dur-seq))
+
 (defn- note-count [score]
   (let [dur-seq (score->seq score)]
     (+ (count (notes dur-seq))
@@ -49,5 +52,6 @@
   (hash-map
    :part-count (.getPartCount score)
    :measure-count (measure-count score)
-   :note-count (note-count score)))
+   :note-count (note-count score)
+   :rest-count (count (rests (score->seq score)))))
 

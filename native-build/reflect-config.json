@@ -21,6 +21,9 @@
   "name":"[Ljava.lang.Object;"}
 ,
 {
+  "name":"[Ljava.lang.String;"}
+,
+{
   "name":"[S"}
 ,
 {
@@ -667,13 +670,25 @@
   "name":"org.wmn4j.io.musicxml.MusicXmlReader"}
 ,
 {
+  "name":"org.wmn4j.notation.Chord",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getNoteCount","parameterTypes":[] }]}
+,
+{
+  "name":"org.wmn4j.notation.Note"}
+,
+{
+  "name":"org.wmn4j.notation.Rest"}
+,
+{
   "name":"org.wmn4j.notation.Score",
   "queryAllPublicMethods":true,
   "methods":[
     {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Score$Attribute"] }, 
     {"name":"getFullMeasureCount","parameterTypes":[] }, 
     {"name":"getPartCount","parameterTypes":[] }, 
-    {"name":"hasPickupMeasure","parameterTypes":[] }
+    {"name":"hasPickupMeasure","parameterTypes":[] }, 
+    {"name":"partwiseIterator","parameterTypes":[] }
   ]}
 ,
 {
