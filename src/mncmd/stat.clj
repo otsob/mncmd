@@ -22,7 +22,10 @@
 (defn- count-stat [score]
   (let [counts (score/counts score)]
     (str (stat-row "Part count" (:part-count counts))
-         (stat-row "Measure count" (:measure-count counts))
+         (stat-row "Measure count" (str (:measure-count counts) 
+                                        (if (:has-pickup counts) 
+                                          " (+ pickup)"
+                                          "")))
          (stat-row "Note count" (:note-count counts))
          (stat-row "Rest count" (:rest-count counts)))))
 

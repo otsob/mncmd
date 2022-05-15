@@ -7,4 +7,5 @@
                  [org.wmn4j/wmn4j "0.5.3"]
                  [cli-matic "0.4.2"]]
   :main mncmd.core
-  :repl-options {:init-ns mncmd.core})
+  :repl-options {:init-ns mncmd.core}
+  :dev {:resource-paths ["test/resources"]})

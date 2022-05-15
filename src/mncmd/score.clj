@@ -19,12 +19,6 @@
       (.get attr-opt)
       "")))
 
-(defn- measure-count [score]
-  (let [m (.getFullMeasureCount score)]
-    (if (.hasPickupMeasure score)
-      (str m " (+ pickup)")
-      (str m))))
-
 (defn attributes [score]
   (hash-map :title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
             :movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
@@ -51,7 +45,8 @@
 (defn counts [score]
   (hash-map
    :part-count (.getPartCount score)
-   :measure-count (measure-count score)
+   :measure-count (.getFullMeasureCount score)
+   :has-pickup (.hasPickupMeasure score)
    :note-count (note-count score)
    :rest-count (count (rests (score->seq score)))))
 
