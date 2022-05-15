@@ -29,6 +29,9 @@
          (stat-row "Note count" (:note-count counts))
          (stat-row "Rest count" (:rest-count counts)))))
 
+(defn- part-list [score]
+  (let [parts (score/parts score)]
+    (stat-row "Parts" (str/join ", " (map :name parts)))))
 
 (defn print-stat [args]
   (let [path (get (args :_arguments) 0)
@@ -37,4 +40,6 @@
     (print (basic-stat score))
     (when (:counts args)
       (print (count-stat score)))
+    (when (:parts args)
+      (print (part-list score)))
     (println)))

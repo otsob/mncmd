@@ -17,3 +17,10 @@
       (is (= 2 (:measure-count counts)))
       (is (= 5 (:note-count counts)))
       (is (= 1 (:rest-count counts))))))
+
+(deftest test-parts
+  (let [parts (score/parts score)]
+    (testing "Test parts"
+      (is (= 2 (count parts)))
+      (is (= "Part1" (:name (nth parts 0))))
+      (is (= "Part2" (:name (nth parts 1)))))))

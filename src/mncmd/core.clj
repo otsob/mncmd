@@ -12,6 +12,9 @@
                   :description "Shows file information for a music notation file"
                   :opts        [{:as     "Counts"
                                  :option "counts"
+                                 :type   :with-flag}
+                                {:as     "Parts"
+                                 :option "parts"
                                  :type   :with-flag}]
                   :runs        stat/print-stat}]})
 

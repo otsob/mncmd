@@ -48,3 +48,11 @@
    :note-count (note-count score)
    :rest-count (count (rests (score->seq score)))))
 
+(defn- part-attributes [part]
+  (if-let [name (.orElse (.getName part) nil)]
+    {:name name}
+    {}))
+
+(defn parts [score]
+  (let [part-seq (iterator-seq (.iterator score))]
+    (map part-attributes part-seq)))
