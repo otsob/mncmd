@@ -24,3 +24,6 @@ jobs:
 
       - name: Unit tests
         run: lein test
+
+      - name: Lint
+        run: lein clj-kondo --lint src

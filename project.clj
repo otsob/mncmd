@@ -8,4 +8,5 @@
                  [cli-matic "0.4.2"]]
   :main mncmd.core
   :repl-options {:init-ns mncmd.core}
-  :dev {:resource-paths ["test/resources"]})
+  :dev {:resource-paths ["test/resources"]}
+  :plugins [[com.github.clj-kondo/lein-clj-kondo "0.1.3"]])

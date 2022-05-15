@@ -33,9 +33,8 @@
 (defn print-stat [args]
   (let [path (get (args :_arguments) 0)
         score (score/read-score path)]
-    (do
-      (print (stat-row "Score path" path))
-      (print (basic-stat score))
-      (when (:counts args)
-        (print (count-stat score)))
-      (println))))
+    (print (stat-row "Score path" path))
+    (print (basic-stat score))
+    (when (:counts args)
+      (print (count-stat score)))
+    (println)))
