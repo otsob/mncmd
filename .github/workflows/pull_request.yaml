@@ -1,0 +1,26 @@
+name: Compile and Test on pull-request
+on: [ pull_request ]
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Prepare java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@5.0
+        with:
+          lein: 2.9.8
+
+      - name: Compile
+        run: lein compile
+
+      - name: Unit tests
+        run: lein test
