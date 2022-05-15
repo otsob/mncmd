@@ -12,7 +12,7 @@ Building `mncmd` requires:
 
 - Java (tested with version 11)
 - Clojure (tested with version 1.11)
-- Leiningent (tested with version 2.9.8)
+- Leiningen (tested with version 2.9.8)
 - GraalVM and native image (tested with 21.3.0)
 
 ## Building/installing mncmd
