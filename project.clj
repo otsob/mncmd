@@ -1,4 +1,4 @@
-(defproject mncmd "0.1.0-SNAPSHOT"
+(defproject mncmd "0.1.0"
   :description "Command line tool for extracting information from music notation files"
   :url "https://github.com/otsob/mncmd"
   :license {:name "MIT License"
@@ -8,4 +8,5 @@
                  [cli-matic "0.4.2"]]
   :main mncmd.core
   :repl-options {:init-ns mncmd.core}
-  :dev {:resource-paths ["test/resources"]})
+  :dev {:resource-paths ["test/resources"]}
+  :plugins [[com.github.clj-kondo/lein-clj-kondo "0.1.3"]])
