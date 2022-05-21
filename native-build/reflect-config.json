@@ -619,7 +619,8 @@
   "queryAllPublicMethods":true,
   "methods":[
     {"name":"get","parameterTypes":[] }, 
-    {"name":"isPresent","parameterTypes":[] }
+    {"name":"isPresent","parameterTypes":[] }, 
+    {"name":"orElse","parameterTypes":["java.lang.Object"] }
   ]}
 ,
 {
@@ -675,7 +676,24 @@
   "methods":[{"name":"getNoteCount","parameterTypes":[] }]}
 ,
 {
+  "name":"org.wmn4j.notation.Measure",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"iterator","parameterTypes":[] }]}
+,
+{
+  "name":"org.wmn4j.notation.MultiStaffPart",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getName","parameterTypes":[] }
+  ]}
+,
+{
   "name":"org.wmn4j.notation.Note"}
+,
+{
+  "name":"org.wmn4j.notation.Part",
+  "methods":[{"name":"iterator","parameterTypes":[] }]}
 ,
 {
   "name":"org.wmn4j.notation.Rest"}
@@ -688,7 +706,16 @@
     {"name":"getFullMeasureCount","parameterTypes":[] }, 
     {"name":"getPartCount","parameterTypes":[] }, 
     {"name":"hasPickupMeasure","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }, 
     {"name":"partwiseIterator","parameterTypes":[] }
+  ]}
+,
+{
+  "name":"org.wmn4j.notation.SingleStaffPart",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getName","parameterTypes":[] }
   ]}
 ,
 {
