@@ -8,5 +8,5 @@ native-image --report-unsupported-elements-at-runtime \
              -H:Log=registerResource: \
              -H:ResourceConfigurationFiles=./native-build/resource-config.json \
              -H:ReflectionConfigurationFiles=./native-build/reflect-config.json \
-             -jar ./target/mncmd-0.1.0-SNAPSHOT-standalone.jar \
+             -jar ./target/mncmd-0.1.0-standalone.jar \
              -H:Name=./target/mncmd
