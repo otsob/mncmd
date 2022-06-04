@@ -4,6 +4,7 @@ lein uberjar
 native-image --report-unsupported-elements-at-runtime \
              --initialize-at-build-time \
              --no-server \
+             --no-fallback \
              --allow-incomplete-classpath \
              -H:Log=registerResource: \
              -H:ResourceConfigurationFiles=./native-build/resource-config.json \
