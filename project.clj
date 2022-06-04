@@ -3,8 +3,8 @@
   :url "https://github.com/otsob/mncmd"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.10.3"]
-                 [org.wmn4j/wmn4j "0.5.3"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
+                 [org.wmn4j/wmn4j "0.6.0"]
                  [cli-matic "0.4.2"]]
   :main mncmd.core
   :repl-options {:init-ns mncmd.core}
