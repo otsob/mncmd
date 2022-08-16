@@ -18,10 +18,10 @@
       "")))
 
 (defn score-attributes [score]
-  (hash-map :title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
-            :movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
-            :composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
-            :arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))
+  (hash-map ::title (attribute-value score org.wmn4j.notation.Score$Attribute/TITLE)
+            ::movement-title (attribute-value score org.wmn4j.notation.Score$Attribute/MOVEMENT_TITLE)
+            ::composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
+            ::arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))
 
 (defn score->seq [score]
   (iterator-seq (.partwiseIterator score)))
@@ -41,11 +41,11 @@
 
 (defn score-counts [score]
   (hash-map
-   :part-count (.getPartCount score)
-   :measure-count (.getFullMeasureCount score)
-   :has-pickup (.hasPickupMeasure score)
-   :note-count (note-count (score->seq score))
-   :rest-count (count (rests (score->seq score)))))
+   ::part-count (.getPartCount score)
+   ::measure-count (.getFullMeasureCount score)
+   ::has-pickup (.hasPickupMeasure score)
+   ::note-count (note-count (score->seq score))
+   ::rest-count (count (rests (score->seq score)))))
 
 (defn- part->dur-seq [part]
   (let [measure-seq (iterator-seq (.iterator part))]
@@ -54,12 +54,12 @@
 (defn part-counts [part]
   (let [dur-seq (part->dur-seq part)]
     (hash-map
-     :note-count (note-count dur-seq)
-     :rest-count (count (rests dur-seq)))))
+     ::note-count (note-count dur-seq)
+     ::rest-count (count (rests dur-seq)))))
 
 (defn part-attributes [part]
-  {:name (.orElse (.getName part) nil)
-   :abbr-name (.orElse (.getAttribute part org.wmn4j.notation.Part$Attribute/ABBREVIATED_NAME) nil)})
+  {::part-name (.orElse (.getName part) nil)
+   ::abbr-name (.orElse (.getAttribute part org.wmn4j.notation.Part$Attribute/ABBREVIATED_NAME) nil)})
 
 (defn parts [score]
   (iterator-seq (.iterator score)))

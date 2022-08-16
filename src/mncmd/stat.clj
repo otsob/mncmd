@@ -13,26 +13,26 @@
 
 (defn- basic-stat [score]
   (let [score-attr (score/score-attributes score)]
-    (str (stat-row "Title" (:title score-attr))
-         (stat-row "Movement-title" (:movement-title score-attr))
-         (stat-row "Composer" (:composer score-attr))
-         (stat-row "Arranger" (:arranger score-attr)))))
+    (str (stat-row "Title" (::score/title score-attr))
+         (stat-row "Movement-title" (::score/movement-title score-attr))
+         (stat-row "Composer" (::score/composer score-attr))
+         (stat-row "Arranger" (::score/arranger score-attr)))))
 
 (defn- count-stat [score]
   (let [counts (score/score-counts score)]
-    (str (stat-row "Part count" (:part-count counts))
-         (stat-row "Measure count" (str (:measure-count counts)
-                                        (if (:has-pickup counts)
+    (str (stat-row "Part count" (::score/part-count counts))
+         (stat-row "Measure count" (str (::score/measure-count counts)
+                                        (if (::score/has-pickup counts)
                                           " (+ pickup)"
                                           "")))
-         (stat-row "Note count" (:note-count counts))
-         (stat-row "Rest count" (:rest-count counts)))))
+         (stat-row "Note count" (::score/note-count counts))
+         (stat-row "Rest count" (::score/rest-count counts)))))
 
 (defn- part-stat [part]
-  (str (stat-row "Name" (:name part))
-       (stat-row "Abbreviated name" (:abbr-name part))
-       (stat-row "Note count" (:note-count part))
-       (stat-row "Rest count" (:rest-count part))))
+  (str (stat-row "Name" (::score/name part))
+       (stat-row "Abbreviated name" (::score/abbr-name part))
+       (stat-row "Note count" (::score/note-count part))
+       (stat-row "Rest count" (::score/rest-count part))))
 
 (defn all-part-stats [score args]
   (let [part-attr (score/all-part-attributes score)
