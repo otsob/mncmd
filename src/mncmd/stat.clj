@@ -41,9 +41,8 @@
                 part-attr)]
     (str/join "\n" (map part-stat parts))))
 
-(defn print-stat [args]
-  (let [path (get (args :_arguments) 0)
-        score (score/read-score path)]
+(defn- print-score-stat [path args]
+  (let [score (score/read-score path)]
     (print (stat-row "Score path" path))
     (print (basic-stat score))
     (when (:counts args)
@@ -52,3 +51,6 @@
       (println "\n=== Parts ===")
       (print (all-part-stats score args)))
     (println)))
+
+(defn print-stats [args]
+  (run! #(print-score-stat % args) (:_arguments args)))
