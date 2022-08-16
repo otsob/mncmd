@@ -29,7 +29,7 @@
          (stat-row "Rest count" (::score/rest-count counts)))))
 
 (defn- part-stat [part]
-  (str (stat-row "Name" (::score/name part))
+  (str (stat-row "Name" (::score/part-name part))
        (stat-row "Abbreviated name" (::score/abbr-name part))
        (stat-row "Note count" (::score/note-count part))
        (stat-row "Rest count" (::score/rest-count part))))

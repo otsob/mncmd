@@ -22,8 +22,8 @@
   (let [parts (score/all-part-attributes score)]
     (testing "Test parts"
       (is (= 2 (count parts)))
-      (is (= "Part1" (::score/name (nth parts 0))))
-      (is (= "Part2" (::score/name (nth parts 1)))))))
+      (is (= "Part1" (::score/part-name (nth parts 0))))
+      (is (= "Part2" (::score/part-name (nth parts 1)))))))
 
 (deftest test-part-counts
   (let [part-counts (score/all-part-counts score)
