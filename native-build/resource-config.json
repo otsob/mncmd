@@ -285,18 +285,10 @@
     }, 
     {
       "pattern":"\\Qorg/wmn4j/io/musicxml/musicxml.xsd\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/wmn4j/io/musicxml/xlink.xsd\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/wmn4j/io/musicxml/xml.xsd\\E"
-    },
-    {
-      "pattern":"\\Qorg/wmn4j/analysis/harmony/KSKeyProfiles.csv\\E"
     }
   ]},
   "bundles":[{
-      "name":"com.sun.org.apache.xerces.internal.impl.xpath.regex.message"
+      "name":"com.sun.org.apache.xerces.internal.impl.xpath.regex.message",
+      "locales":[""]
     }]
 }
