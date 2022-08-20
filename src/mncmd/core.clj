@@ -14,6 +14,9 @@
                                  :type   :with-flag}
                                 {:as     "Apply stat to all parts in a score separately."
                                  :option "parts"
+                                 :type   :with-flag}
+                                {:as     "Prints the ambitus of the score (and parts with --parts option)."
+                                 :option "ambitus"
                                  :type   :with-flag}]
                   :runs        stat/print-stats}]})
 

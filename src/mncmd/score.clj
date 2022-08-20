@@ -69,3 +69,38 @@
 
 (defn all-part-counts [score]
   (map part-counts (parts score)))
+
+(defn- note->pitch [note]
+  (let [pitch (.getPitch note)]
+    (if (.isPresent pitch)
+      (.get pitch)
+      nil)))
+
+(defn- dur->pitches [durational]
+  (cond
+    (.isNote durational)  [(note->pitch (.toNote durational))]
+    (.isChord durational) (map note->pitch (iterator-seq
+                                            (.iterator (.toChord durational))))
+    (.isRest durational) nil))
+
+(defn- ambitus [dur-seq]
+  (loop [pitches (filter #(not (nil? %)) (mapcat dur->pitches dur-seq))
+         lowest (first pitches)
+         highest (first pitches)]
+    (let [pitch (first pitches)]
+      (if (empty? pitches)
+        {::lowest  lowest
+         ::highest highest}
+        (recur (rest pitches)
+               (if (.isLowerThan pitch lowest)
+                 pitch
+                 lowest)
+               (if (.isHigherThan pitch highest)
+                 pitch
+                 highest))))))
+
+(defn score-ambitus [score]
+  (ambitus (score->seq score)))
+
+(defn part-ambitus [score]
+  (map (comp ambitus part->dur-seq) (parts score)))
