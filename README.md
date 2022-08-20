@@ -19,6 +19,9 @@ Building `mncmd` requires:
 
 To build a native executable, run [native-build/build.sh](native-build/build.sh). The executable can be found in the `target` directory. Place the executable where you want to keep it, and create a suitable alias for it.
 
+If there are changes to the code, the Graal native image resource files may need to be regenerated.
+This is achieved by setting `export JAVA_HOME=<path/to/your/graalvm/home/dir>` and running [native-build/generate-resource-files.sh](./native-build/generate-resource-files.sh).
+
 ## Usage
 
 Type in `mncmd --help` to find out how to use `mncmd`.
