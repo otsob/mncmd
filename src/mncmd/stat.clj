@@ -15,6 +15,10 @@
   (when key-sig
     (str (str "Flats: " (.getFlats key-sig)) (str " Sharps: " (.getSharps key-sig)))))
 
+(defn- time-sig->str [time-sig]
+  (when time-sig
+    (str (.getBeatCount time-sig) "/" (.getDenominator (.getBeatDuration time-sig)))))
+
 (defn- basic-stat [score]
   (let [score-attr (score/score-attributes score)]
     (str (stat-row "Title" (::score/title score-attr))
@@ -44,17 +48,29 @@
        (stat-row "Rest count" (::score/rest-count part))
        (stat-row "Lowest pitch" (::score/lowest part))
        (stat-row "Highest pitch" (::score/highest part))
-       (stat-row "Key signature" (key-sig->str (::score/key-signature part)))))
+       (stat-row "Key signature" (key-sig->str (::score/key-signature part)))
+       (stat-row "Time signature" (time-sig->str (::score/time-signature part)))))
+
+(defn- most-common [elems]
+  (->> elems
+       frequencies
+       (sort-by val)
+       reverse
+       (take 1)
+       (map first)
+       first))
+
+(defn- most-common-time-sig [time-sig-maps]
+  (let [time-sigs (map ::score/time-signature time-sig-maps)]
+    (most-common time-sigs)))
+
+(defn time-signature-stat [score]
+  (let [time-sigs (score/time-signatures score)]
+    (str (stat-row "Time signature" (time-sig->str (most-common-time-sig time-sigs))))))
 
 (defn- most-common-key-sig [key-sig-maps]
   (let [key-sigs (map ::score/key-signature key-sig-maps)]
-    (->> key-sigs
-         frequencies
-         (sort-by val)
-         reverse
-         (take 1)
-         (map first)
-         first)))
+    (most-common key-sigs)))
 
 (defn key-signature-stat [score]
   (let [key-sigs (score/key-signatures score)]
@@ -65,7 +81,8 @@
           [(score/all-part-attributes score)
            (when (:counts args) (score/all-part-counts score))
            (when (:ambitus args) (score/part-ambitus score))
-           (when (:key-signature args) (score/key-signatures score))]))
+           (when (:key-signature args) (score/key-signatures score))
+           (when (:time-signature args) (score/time-signatures score))]))
 
 (defn- all-part-stats [score args]
   (let [part-attr (map #(apply merge %)
@@ -82,6 +99,8 @@
       (print (ambitus-stat score)))
     (when (:key-signature args)
       (print (key-signature-stat score)))
+    (when (:time-signature args)
+      (print (time-signature-stat score)))
     (when (:parts args)
       (println "\n=== Parts ===")
       (print (all-part-stats score args)))

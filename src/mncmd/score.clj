@@ -107,3 +107,6 @@
 
 (defn key-signatures [score]
   (map #(hash-map ::key-signature (.getKeySignature (.getMeasure % Part/DEFAULT_STAFF_NUMBER 1))) (parts score)))
+
+(defn time-signatures [score]
+  (map #(hash-map ::time-signature (.getTimeSignature (.getMeasure % Part/DEFAULT_STAFF_NUMBER 1))) (parts score)))
