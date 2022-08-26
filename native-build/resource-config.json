@@ -62,6 +62,12 @@
       "pattern":"\\Qcli_matic/utils_v2__init.class\\E"
     }, 
     {
+      "pattern":"\\Qclj_tuple.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qclj_tuple__init.class\\E"
+    }, 
+    {
       "pattern":"\\Qclojure/core.clj\\E"
     }, 
     {
@@ -75,6 +81,9 @@
     }, 
     {
       "pattern":"\\Qclojure/core/server__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qclojure/core/specs/alpha.clj\\E"
     }, 
     {
       "pattern":"\\Qclojure/core__init.class\\E"
@@ -227,6 +236,9 @@
       "pattern":"\\Qclojure/walk__init.class\\E"
     }, 
     {
+      "pattern":"\\Qdata_readers.clj\\E"
+    }, 
+    {
       "pattern":"\\Qexpound/alpha.cljc\\E"
     }, 
     {
@@ -269,6 +281,12 @@
       "pattern":"\\Qmncmd/core__init.class\\E"
     }, 
     {
+      "pattern":"\\Qmncmd/harmony.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qmncmd/harmony__init.class\\E"
+    }, 
+    {
       "pattern":"\\Qmncmd/score.clj\\E"
     }, 
     {
@@ -281,10 +299,100 @@
       "pattern":"\\Qmncmd/stat__init.class\\E"
     }, 
     {
+      "pattern":"\\Qmncmd/visual.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qmncmd/visual__init.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
     }, 
     {
       "pattern":"\\Qorg/wmn4j/io/musicxml/musicxml.xsd\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/collections.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/collections__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/macros.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/macros__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/namespaces.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/namespaces__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/types.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/types__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/utils.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/utils__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/walk.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin/walk__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpotemkin__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/ansi_escape_code.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/ansi_escape_code__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/api.cljc\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/api__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/core.cljc\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/core__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/layout.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/layout__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/object.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qpp_grid/object__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qriddley/compiler.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qriddley/compiler__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qriddley/walk.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qriddley/walk__init.class\\E"
     }
   ]},
   "bundles":[{

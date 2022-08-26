@@ -23,7 +23,7 @@
             ::composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
             ::arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))
 
-(defn score->seq [score]
+(defn score->dur-seq [score]
   (iterator-seq (.partwiseIterator score)))
 
 (defn- chords [dur-seq]
@@ -44,10 +44,10 @@
    ::part-count (.getPartCount score)
    ::measure-count (.getFullMeasureCount score)
    ::has-pickup (.hasPickupMeasure score)
-   ::note-count (note-count (score->seq score))
-   ::rest-count (count (rests (score->seq score)))))
+   ::note-count (note-count (score->dur-seq score))
+   ::rest-count (count (rests (score->dur-seq score)))))
 
-(defn- part->dur-seq [part]
+(defn part->dur-seq [part]
   (let [measure-seq (iterator-seq (.iterator part))]
     (mapcat #(iterator-seq (.iterator %)) measure-seq)))
 
@@ -100,7 +100,7 @@
                  highest))))))
 
 (defn score-ambitus [score]
-  (ambitus (score->seq score)))
+  (ambitus (score->dur-seq score)))
 
 (defn part-ambitus [score]
   (map (comp ambitus part->dur-seq) (parts score)))

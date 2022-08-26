@@ -25,7 +25,13 @@
                                 {:as     "Prints the first time signature of the score (and parts with --parts option).
                                           In case of parts having different time signatures, prints the most common."
                                  :option "time-signature"
-                                 :type   :with-flag}]
+                                 :type   :with-flag}
+                                {:as      "Prints the chromagram (weighted by duration) of the score (and parts with --parts option)."
+                                 :option  "chroma"
+                                 :type    :with-flag}
+                                {:as      "Prints a chromagram plot (weighted by duration) of the score (and parts with --parts option)."
+                                 :option  "chroma-plot"
+                                 :type    :with-flag}]
                   :runs        stat/print-stats}]})
 
 (defn -main

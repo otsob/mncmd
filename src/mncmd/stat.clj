@@ -1,5 +1,7 @@
 (ns mncmd.stat
   (:require [mncmd.score :as score]
+            [mncmd.harmony :as harmony]
+            [mncmd.visual :as vis]
             [clojure.string :as str])
   (:gen-class))
 
@@ -9,7 +11,9 @@
   (let [whitespace (str/join (repeat (- indent-depth (count attr-name)) " "))]
     (if (str/blank? (str attr-value))
       ""
-      (str attr-name ":" whitespace attr-value "\n"))))
+      (if (str/blank? attr-name)
+        (str "\n" attr-value "\n")
+        (str attr-name ":" whitespace attr-value "\n")))))
 
 (defn- key-sig->str [key-sig]
   (when key-sig
@@ -49,7 +53,9 @@
        (stat-row "Lowest pitch" (::score/lowest part))
        (stat-row "Highest pitch" (::score/highest part))
        (stat-row "Key signature" (key-sig->str (::score/key-signature part)))
-       (stat-row "Time signature" (time-sig->str (::score/time-signature part)))))
+       (stat-row "Time signature" (time-sig->str (::score/time-signature part)))
+       (stat-row "Chromagram" (:chroma part))
+       (stat-row "" (:chroma-plot part))))
 
 (defn- most-common [elems]
   (->> elems
@@ -72,7 +78,7 @@
   (let [key-sigs (map ::score/key-signature key-sig-maps)]
     (most-common key-sigs)))
 
-(defn key-signature-stat [score]
+(defn- key-signature-stat [score]
   (let [key-sigs (score/key-signatures score)]
     (str (stat-row "Key signature" (key-sig->str (most-common-key-sig key-sigs))))))
 
@@ -82,12 +88,18 @@
            (when (:counts args) (score/all-part-counts score))
            (when (:ambitus args) (score/part-ambitus score))
            (when (:key-signature args) (score/key-signatures score))
-           (when (:time-signature args) (score/time-signatures score))]))
+           (when (:time-signature args) (score/time-signatures score))
+           (when (:chroma args) (map #(hash-map :chroma %) (harmony/part-chromagrams score)))
+           (when (:chroma-plot args) (map #(hash-map :chroma-plot (vis/plot-chroma %)) (harmony/part-chromagrams score)))]))
 
 (defn- all-part-stats [score args]
   (let [part-attr (map #(apply merge %)
                        (apply map vector (part-attribute-maps score args)))]
     (str/join "\n" (map part-stat part-attr))))
+
+(defn- chromagram-stat [score]
+  (let [chroma (harmony/score->chromagram score)]
+    (stat-row "Chromagram" chroma)))
 
 (defn- print-score-stat [path args]
   (let [score (score/read-score path)]
@@ -101,6 +113,10 @@
       (print (key-signature-stat score)))
     (when (:time-signature args)
       (print (time-signature-stat score)))
+    (when (:chroma args)
+      (print (chromagram-stat score)))
+    (when (:chroma-plot args)
+      (print (vis/plot-chroma (harmony/score->chromagram score))))
     (when (:parts args)
       (println "\n=== Parts ===")
       (print (all-part-stats score args)))
