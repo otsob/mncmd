@@ -660,7 +660,20 @@
 {
   "name":"org.wmn4j.notation.Chord",
   "queryAllPublicMethods":true,
-  "methods":[{"name":"getNoteCount","parameterTypes":[] }]
+  "methods":[
+    {"name":"getNoteCount","parameterTypes":[] }, 
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Durational",
+  "methods":[
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }, 
+    {"name":"toChord","parameterTypes":[] }, 
+    {"name":"toNote","parameterTypes":[] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.Measure",
@@ -676,14 +689,29 @@
   ]
 },
 {
-  "name":"org.wmn4j.notation.Note"
+  "name":"org.wmn4j.notation.Note",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getPitch","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.Part",
   "methods":[{"name":"iterator","parameterTypes":[] }]
 },
 {
-  "name":"org.wmn4j.notation.Rest"
+  "name":"org.wmn4j.notation.Pitch",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"isHigherThan","parameterTypes":["org.wmn4j.notation.Pitch"] }, 
+    {"name":"isLowerThan","parameterTypes":["org.wmn4j.notation.Pitch"] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Rest",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"isRest","parameterTypes":[] }]
 },
 {
   "name":"org.wmn4j.notation.Score",
