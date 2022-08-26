@@ -1,6 +1,6 @@
 (ns mncmd.score
   (:import [java.nio.file Paths]
-           [org.wmn4j.notation Note Chord Rest]
+           [org.wmn4j.notation Note Chord Rest Part]
            [org.wmn4j.io.musicxml MusicXmlReader])
   (:gen-class))
 
@@ -104,3 +104,6 @@
 
 (defn part-ambitus [score]
   (map (comp ambitus part->dur-seq) (parts score)))
+
+(defn key-signatures [score]
+  (map #(hash-map ::key-signature (.getKeySignature (.getMeasure % Part/DEFAULT_STAFF_NUMBER 1))) (parts score)))

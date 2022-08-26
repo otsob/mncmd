@@ -11,6 +11,10 @@
       ""
       (str attr-name ":" whitespace attr-value "\n"))))
 
+(defn- key-sig->str [key-sig]
+  (when key-sig
+    (str (str "Flats: " (.getFlats key-sig)) (str " Sharps: " (.getSharps key-sig)))))
+
 (defn- basic-stat [score]
   (let [score-attr (score/score-attributes score)]
     (str (stat-row "Title" (::score/title score-attr))
@@ -39,13 +43,29 @@
        (stat-row "Note count" (::score/note-count part))
        (stat-row "Rest count" (::score/rest-count part))
        (stat-row "Lowest pitch" (::score/lowest part))
-       (stat-row "Highest pitch" (::score/highest part))))
+       (stat-row "Highest pitch" (::score/highest part))
+       (stat-row "Key signature" (key-sig->str (::score/key-signature part)))))
+
+(defn- most-common-key-sig [key-sig-maps]
+  (let [key-sigs (map ::score/key-signature key-sig-maps)]
+    (->> key-sigs
+         frequencies
+         (sort-by val)
+         reverse
+         (take 1)
+         (map first)
+         first)))
+
+(defn key-signature-stat [score]
+  (let [key-sigs (score/key-signatures score)]
+    (str (stat-row "Key signature" (key-sig->str (most-common-key-sig key-sigs))))))
 
 (defn- part-attribute-maps [score args]
   (filter not-empty
           [(score/all-part-attributes score)
            (when (:counts args) (score/all-part-counts score))
-           (when (:ambitus args) (score/part-ambitus score))]))
+           (when (:ambitus args) (score/part-ambitus score))
+           (when (:key-signature args) (score/key-signatures score))]))
 
 (defn- all-part-stats [score args]
   (let [part-attr (map #(apply merge %)
@@ -60,6 +80,8 @@
       (print (count-stat score)))
     (when (:ambitus args)
       (print (ambitus-stat score)))
+    (when (:key-signature args)
+      (print (key-signature-stat score)))
     (when (:parts args)
       (println "\n=== Parts ===")
       (print (all-part-stats score args)))

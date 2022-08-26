@@ -17,6 +17,10 @@
                                  :type   :with-flag}
                                 {:as     "Prints the ambitus of the score (and parts with --parts option)."
                                  :option "ambitus"
+                                 :type   :with-flag}
+                                {:as     "Prints the first key signature of the score (and parts with --parts option).
+                                          In case of parts having different key signature, prints the most common."
+                                 :option "key-signature"
                                  :type   :with-flag}]
                   :runs        stat/print-stats}]})
 
