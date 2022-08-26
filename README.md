@@ -21,6 +21,7 @@ To build a native executable, run [native-build/build.sh](native-build/build.sh)
 
 If there are changes to the code, the Graal native image resource files may need to be regenerated.
 This is achieved by setting `export JAVA_HOME=<path/to/your/graalvm/home/dir>` and running [native-build/generate-resource-files.sh](./native-build/generate-resource-files.sh).
+Incrementing the version number of `mncmd` is done using [bump2version](https://github.com/c4urself/bump2version/#installation).
 
 ## Usage
 
