@@ -8,6 +8,8 @@
                  [org.slf4j/slf4j-jdk14 "1.7.36"]
                  [cli-matic "0.4.2"]]
   :main mncmd.core
+  :aot [mncmd.core]
+  :uberjar {:aot :all}
   :repl-options {:init-ns mncmd.core}
   :dev {:resource-paths ["test/resources"]}
   :plugins [[com.github.clj-kondo/lein-clj-kondo "0.1.3"]])
