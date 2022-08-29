@@ -14,6 +14,7 @@ Building `mncmd` requires:
 - Clojure (tested with version 1.11)
 - Leiningen (tested with version 2.9.8)
 - GraalVM and native image (tested with 22.1.0)
+- [Dependencies](./project.clj)
 
 ## Building/installing mncmd
 
