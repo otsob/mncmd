@@ -1,6 +1,7 @@
 (ns mncmd.score-test
   (:require [clojure.test :refer :all]
-            [mncmd.score :as score]))
+            [mncmd.score :as score])
+  (:import [org.wmn4j.notation Pitch]))
 
 (def score (score/read-score "test/resources/multistaff_test_file.musicxml"))
 
@@ -39,3 +40,27 @@
       (is (= 0 (::score/rest-count part-two-counts)))
       (is (= 4 (::score/note-count part-three-counts)))
       (is (= 4 (::score/rest-count part-three-counts))))))
+
+(deftest test-score-ambitus
+  (let [score-ambitus (score/score-ambitus score)]
+    (testing "Test ambitus of score"
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/A org.wmn4j.notation.Pitch$Accidental/NATURAL 2)
+             (::score/lowest score-ambitus)))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/D org.wmn4j.notation.Pitch$Accidental/NATURAL 5)
+             (::score/highest score-ambitus))))))
+
+(deftest test-part-ambitus
+  (let [part-ambitus (score/part-ambitus score)]
+    (testing "Test ambitus of parts"
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/G org.wmn4j.notation.Pitch$Accidental/NATURAL 4)
+             (::score/lowest (nth part-ambitus 0))))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/D org.wmn4j.notation.Pitch$Accidental/NATURAL 5)
+             (::score/highest (nth part-ambitus 0))))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/G org.wmn4j.notation.Pitch$Accidental/NATURAL 3)
+             (::score/lowest (nth part-ambitus 1))))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/G org.wmn4j.notation.Pitch$Accidental/NATURAL 3)
+             (::score/highest (nth part-ambitus 1))))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/A org.wmn4j.notation.Pitch$Accidental/NATURAL 2)
+             (::score/lowest (nth part-ambitus 2))))
+      (is (= (Pitch/of org.wmn4j.notation.Pitch$Base/F org.wmn4j.notation.Pitch$Accidental/SHARP 4)
+             (::score/highest (nth part-ambitus 2)))))))

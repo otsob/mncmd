@@ -60,6 +60,9 @@
   "name":"cli_matic.utils_v2__init"
 },
 {
+  "name":"clj_tuple__init"
+},
+{
   "name":"clojure.asm.ClassVisitor"
 },
 {
@@ -123,6 +126,150 @@
   "name":"clojure.core.server__init"
 },
 {
+  "name":"clojure.core.specs.alpha$eval11",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$eval134",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$eval136",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$eval5",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$eval7",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$even_number_of_forms_QMARK_",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__101",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__104",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__106",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__109",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__112",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__114",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__117",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__119",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__121",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__16",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__19",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__22",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__25",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__28",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__30",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__33",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__35",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__38",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__41",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__44",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__48",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__51",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__54",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__56",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__58",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__71",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__73",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__85",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$fn__98",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"clojure.core.specs.alpha$quotable",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"clojure.core__init"
 },
 {
@@ -171,10 +318,17 @@
   "name":"clojure.lang.ChunkBuffer"
 },
 {
-  "name":"clojure.lang.Compiler"
+  "name":"clojure.lang.Compiler",
+  "allPublicFields":true
 },
 {
   "name":"clojure.lang.Compiler$CompilerException"
+},
+{
+  "name":"clojure.lang.Compiler$ObjExpr"
+},
+{
+  "name":"clojure.lang.Compiler$ObjMethod"
 },
 {
   "name":"clojure.lang.DynamicClassLoader"
@@ -205,6 +359,9 @@
 },
 {
   "name":"clojure.lang.IKVReduce"
+},
+{
+  "name":"clojure.lang.IObj"
 },
 {
   "name":"clojure.lang.IPending"
@@ -252,10 +409,15 @@
   "name":"clojure.lang.LispReader$ReaderException"
 },
 {
+  "name":"clojure.lang.LockingTransaction",
+  "queryAllPublicMethods":true
+},
+{
   "name":"clojure.lang.Murmur3"
 },
 {
-  "name":"clojure.lang.Namespace"
+  "name":"clojure.lang.Namespace",
+  "queryAllPublicMethods":true
 },
 {
   "name":"clojure.lang.PersistentHashMap"
@@ -267,10 +429,17 @@
   "name":"clojure.lang.PersistentQueue"
 },
 {
+  "name":"clojure.lang.PersistentUnrolledMap"
+},
+{
+  "name":"clojure.lang.PersistentUnrolledVector"
+},
+{
   "name":"clojure.lang.PersistentVector"
 },
 {
-  "name":"clojure.lang.RT"
+  "name":"clojure.lang.RT",
+  "queryAllPublicMethods":true
 },
 {
   "name":"clojure.lang.Ratio"
@@ -291,7 +460,8 @@
   "name":"clojure.lang.StringSeq"
 },
 {
-  "name":"clojure.lang.Symbol"
+  "name":"clojure.lang.Symbol",
+  "queryAllPublicMethods":true
 },
 {
   "name":"clojure.lang.TaggedLiteral"
@@ -300,7 +470,8 @@
   "name":"clojure.lang.Util"
 },
 {
-  "name":"clojure.lang.Var"
+  "name":"clojure.lang.Var",
+  "queryAllPublicMethods":true
 },
 {
   "name":"clojure.lang.Volatile"
@@ -474,7 +645,8 @@
   "name":"java.lang.Character"
 },
 {
-  "name":"java.lang.Class"
+  "name":"java.lang.Class",
+  "queryAllPublicMethods":true
 },
 {
   "name":"java.lang.Double"
@@ -495,7 +667,8 @@
   "name":"java.lang.Number"
 },
 {
-  "name":"java.lang.Object"
+  "name":"java.lang.Object",
+  "queryAllPublicMethods":true
 },
 {
   "name":"java.lang.StackTraceElement"
@@ -634,6 +807,9 @@
   "name":"java.util.concurrent.BlockingQueue"
 },
 {
+  "name":"java.util.concurrent.ConcurrentHashMap"
+},
+{
   "name":"java.util.concurrent.LinkedBlockingQueue"
 },
 {
@@ -649,10 +825,29 @@
   "name":"mncmd.core__init"
 },
 {
+  "name":"mncmd.harmony__init"
+},
+{
   "name":"mncmd.score__init"
 },
 {
   "name":"mncmd.stat__init"
+},
+{
+  "name":"mncmd.visual__init"
+},
+{
+  "name":"org.wmn4j.analysis.harmony.Chromagram",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getValue","parameterTypes":["org.wmn4j.notation.PitchClass"] }]
+},
+{
+  "name":"org.wmn4j.analysis.harmony.ChromagramBuilder",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"add","parameterTypes":["org.wmn4j.notation.Chord"] }, 
+    {"name":"add","parameterTypes":["org.wmn4j.notation.Note"] }
+  ]
 },
 {
   "name":"org.wmn4j.io.musicxml.MusicXmlReader"
@@ -660,30 +855,79 @@
 {
   "name":"org.wmn4j.notation.Chord",
   "queryAllPublicMethods":true,
-  "methods":[{"name":"getNoteCount","parameterTypes":[] }]
+  "methods":[
+    {"name":"getNoteCount","parameterTypes":[] }, 
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Duration",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getDenominator","parameterTypes":[] }]
+},
+{
+  "name":"org.wmn4j.notation.Durational",
+  "methods":[
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }, 
+    {"name":"toChord","parameterTypes":[] }, 
+    {"name":"toNote","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.KeySignature",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getFlats","parameterTypes":[] }, 
+    {"name":"getSharps","parameterTypes":[] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.Measure",
   "queryAllPublicMethods":true,
-  "methods":[{"name":"iterator","parameterTypes":[] }]
+  "methods":[
+    {"name":"getKeySignature","parameterTypes":[] }, 
+    {"name":"getTimeSignature","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.MultiStaffPart",
   "queryAllPublicMethods":true,
   "methods":[
     {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getMeasure","parameterTypes":["int","int"] }, 
     {"name":"getName","parameterTypes":[] }
   ]
 },
 {
-  "name":"org.wmn4j.notation.Note"
+  "name":"org.wmn4j.notation.Note",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getPitch","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.Part",
   "methods":[{"name":"iterator","parameterTypes":[] }]
 },
 {
-  "name":"org.wmn4j.notation.Rest"
+  "name":"org.wmn4j.notation.Pitch",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"isHigherThan","parameterTypes":["org.wmn4j.notation.Pitch"] }, 
+    {"name":"isLowerThan","parameterTypes":["org.wmn4j.notation.Pitch"] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.PitchClass"
+},
+{
+  "name":"org.wmn4j.notation.Rest",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"isRest","parameterTypes":[] }]
 },
 {
   "name":"org.wmn4j.notation.Score",
@@ -702,8 +946,81 @@
   "queryAllPublicMethods":true,
   "methods":[
     {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getMeasure","parameterTypes":["int","int"] }, 
     {"name":"getName","parameterTypes":[] }
   ]
+},
+{
+  "name":"org.wmn4j.notation.TimeSignature",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getBeatCount","parameterTypes":[] }, 
+    {"name":"getBeatDuration","parameterTypes":[] }
+  ]
+},
+{
+  "name":"potemkin.collections$eval3",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"potemkin.collections.PotemkinMap"
+},
+{
+  "name":"potemkin.collections.PotemkinMeta"
+},
+{
+  "name":"potemkin.collections__init"
+},
+{
+  "name":"potemkin.macros__init"
+},
+{
+  "name":"potemkin.namespaces__init"
+},
+{
+  "name":"potemkin.types.PotemkinType"
+},
+{
+  "name":"potemkin.types__init"
+},
+{
+  "name":"potemkin.utils__init"
+},
+{
+  "name":"potemkin.walk__init"
+},
+{
+  "name":"potemkin__init"
+},
+{
+  "name":"pp_grid.ansi_escape_code__init"
+},
+{
+  "name":"pp_grid.api__init"
+},
+{
+  "name":"pp_grid.core.EscapedChar"
+},
+{
+  "name":"pp_grid.core.Grid"
+},
+{
+  "name":"pp_grid.core__init"
+},
+{
+  "name":"pp_grid.layout__init"
+},
+{
+  "name":"pp_grid.object__init"
+},
+{
+  "name":"riddley.Util"
+},
+{
+  "name":"riddley.compiler__init"
+},
+{
+  "name":"riddley.walk__init"
 },
 {
   "name":"sun.security.provider.NativePRNG",

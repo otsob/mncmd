@@ -1,15 +1,18 @@
 (ns mncmd.score
   (:import [java.nio.file Paths]
-           [org.wmn4j.notation Note Chord Rest]
+           [org.wmn4j.notation Note Chord Rest Part]
            [org.wmn4j.io.musicxml MusicXmlReader])
   (:gen-class))
 
 (defn read-score [path]
   ;; The into-array trick is used to just force the String param overload of Paths.get
   (let [path-obj (Paths/get path (into-array [""]))
-        abs-path (.toAbsolutePath path-obj)]
-    (with-open [reader (MusicXmlReader/readerFor abs-path)]
-      (.readScore reader))))
+        abs-path (.toAbsolutePath path-obj)
+        reader (MusicXmlReader/readerFor abs-path)]
+    (try
+      (.readScore reader)
+      (catch Exception e (println (str "Failed to open " abs-path ": " (.getMessage e))))
+      (finally (.close reader)))))
 
 (defn- attribute-value [score attribute]
   (let [attr-opt (.getAttribute score attribute)]
@@ -23,7 +26,7 @@
             ::composer (attribute-value score org.wmn4j.notation.Score$Attribute/COMPOSER)
             ::arranger (attribute-value score org.wmn4j.notation.Score$Attribute/ARRANGER)))
 
-(defn score->seq [score]
+(defn score->dur-seq [score]
   (iterator-seq (.partwiseIterator score)))
 
 (defn- chords [dur-seq]
@@ -44,10 +47,10 @@
    ::part-count (.getPartCount score)
    ::measure-count (.getFullMeasureCount score)
    ::has-pickup (.hasPickupMeasure score)
-   ::note-count (note-count (score->seq score))
-   ::rest-count (count (rests (score->seq score)))))
+   ::note-count (note-count (score->dur-seq score))
+   ::rest-count (count (rests (score->dur-seq score)))))
 
-(defn- part->dur-seq [part]
+(defn part->dur-seq [part]
   (let [measure-seq (iterator-seq (.iterator part))]
     (mapcat #(iterator-seq (.iterator %)) measure-seq)))
 
@@ -69,3 +72,44 @@
 
 (defn all-part-counts [score]
   (map part-counts (parts score)))
+
+(defn- note->pitch [note]
+  (let [pitch (.getPitch note)]
+    (if (.isPresent pitch)
+      (.get pitch)
+      nil)))
+
+(defn- dur->pitches [durational]
+  (cond
+    (.isNote durational)  [(note->pitch (.toNote durational))]
+    (.isChord durational) (map note->pitch (iterator-seq
+                                            (.iterator (.toChord durational))))
+    (.isRest durational) nil))
+
+(defn- ambitus [dur-seq]
+  (loop [pitches (filter #(not (nil? %)) (mapcat dur->pitches dur-seq))
+         lowest (first pitches)
+         highest (first pitches)]
+    (let [pitch (first pitches)]
+      (if (empty? pitches)
+        {::lowest  lowest
+         ::highest highest}
+        (recur (rest pitches)
+               (if (.isLowerThan pitch lowest)
+                 pitch
+                 lowest)
+               (if (.isHigherThan pitch highest)
+                 pitch
+                 highest))))))
+
+(defn score-ambitus [score]
+  (ambitus (score->dur-seq score)))
+
+(defn part-ambitus [score]
+  (map (comp ambitus part->dur-seq) (parts score)))
+
+(defn key-signatures [score]
+  (map #(hash-map ::key-signature (.getKeySignature (.getMeasure % Part/DEFAULT_STAFF_NUMBER 1))) (parts score)))
+
+(defn time-signatures [score]
+  (map #(hash-map ::time-signature (.getTimeSignature (.getMeasure % Part/DEFAULT_STAFF_NUMBER 1))) (parts score)))
