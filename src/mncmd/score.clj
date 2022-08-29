@@ -7,9 +7,12 @@
 (defn read-score [path]
   ;; The into-array trick is used to just force the String param overload of Paths.get
   (let [path-obj (Paths/get path (into-array [""]))
-        abs-path (.toAbsolutePath path-obj)]
-    (with-open [reader (MusicXmlReader/readerFor abs-path)]
-      (.readScore reader))))
+        abs-path (.toAbsolutePath path-obj)
+        reader (MusicXmlReader/readerFor abs-path)]
+    (try
+      (.readScore reader)
+      (catch Exception e (println (str "Failed to open " abs-path ": " (.getMessage e))))
+      (finally (.close reader)))))
 
 (defn- attribute-value [score attribute]
   (let [attr-opt (.getAttribute score attribute)]
