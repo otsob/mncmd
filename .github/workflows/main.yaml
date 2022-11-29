@@ -30,6 +30,8 @@ jobs:
         run: lein clj-kondo --lint src
 
   bump-version:
+    permissions:
+      contents: write
     needs: test-and-lint
     runs-on: ubuntu-latest
     steps:
