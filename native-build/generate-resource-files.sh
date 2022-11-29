@@ -3,4 +3,4 @@
 # Requires setting JAVA_HOME to GraalVM Home directory
 
 lein uberjar
-$JAVA_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar ./target/mncmd-0.1.2-standalone.jar stat ./test/resources/multistaff_test_file.musicxml --counts --parts --ambitus --key-signature --time-signature --chroma --chroma-plot
+$JAVA_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar ./target/mncmd-0.1.3-standalone.jar stat ./test/resources/multistaff_test_file.musicxml --counts --parts --ambitus --key-signature --time-signature --chroma --chroma-plot
