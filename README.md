@@ -1,7 +1,7 @@
 # mncmd
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![pull_request](https://github.com/otsob/mncmd/actions/workflows/pull_request.yaml/badge.svg)
+![main](https://github.com/otsob/mncmd/actions/workflows/main.yaml/badge.svg)
 
 Command line app for extracting information from music notation files.
 Currently supports only reading MusicXML files.
