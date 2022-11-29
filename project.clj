@@ -1,4 +1,4 @@
-(defproject mncmd "0.1.4"
+(defproject mncmd "0.1.5"
   :description "Command line tool for extracting information from music notation files"
   :url "https://github.com/otsob/mncmd"
   :license {:name "MIT License"
