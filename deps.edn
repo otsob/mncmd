@@ -1,0 +1,19 @@
+{:paths ["src"]
+ :deps
+ {org.wmn4j/wmn4j {:mvn/version "0.6.2"}
+  org.slf4j/slf4j-jdk14 {:mvn/version "1.7.36"}
+  cli-matic/cli-matic {:mvn/version "0.4.2"}
+  org.clojars.rorokimdim/pp-grid {:mvn/version "0.1.15"}}
+
+ :aliases
+ {:build
+  {:deps {io.github.clojure/tools.build
+          {:git/tag "v0.9.1" :git/sha "27ff8a4"}}
+   :ns-default build}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps {io.github.cognitect-labs/test-runner
+                {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+   :main-opts ["-m" "cognitect.test-runner"]
+   :exec-fn cognitect.test-runner.api/test}}}
