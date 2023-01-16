@@ -756,9 +756,6 @@
   "name":"java.sql.Timestamp"
 },
 {
-  "name":"java.text.SimpleDateFormat"
-},
-{
   "name":"java.time.Instant"
 },
 {

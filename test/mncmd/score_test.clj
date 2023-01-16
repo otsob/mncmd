@@ -1,5 +1,5 @@
 (ns mncmd.score-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is testing]]
             [mncmd.score :as score])
   (:import [org.wmn4j.notation Pitch]))
 
