@@ -674,9 +674,7 @@
   "name":"java.lang.StackTraceElement"
 },
 {
-  "name":"java.lang.String",
-  "queryAllPublicMethods":true,
-  "methods":[{"name":"contains","parameterTypes":["java.lang.CharSequence"] }]
+  "name":"java.lang.String"
 },
 {
   "name":"java.lang.ThreadLocal"
@@ -758,9 +756,6 @@
   "name":"java.sql.Timestamp"
 },
 {
-  "name":"java.text.SimpleDateFormat"
-},
-{
   "name":"java.time.Instant"
 },
 {
@@ -789,11 +784,6 @@
     {"name":"isPresent","parameterTypes":[] }, 
     {"name":"orElse","parameterTypes":["java.lang.Object"] }
   ]
-},
-{
-  "name":"java.util.Properties",
-  "queryAllPublicMethods":true,
-  "methods":[{"name":"getProperty","parameterTypes":["java.lang.String"] }]
 },
 {
   "name":"java.util.RandomAccess"
