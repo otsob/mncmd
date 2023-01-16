@@ -33,7 +33,7 @@ jobs:
   bump-version:
     permissions:
       contents: write
-    needs: test-and-lint
+    needs: lint-and-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
