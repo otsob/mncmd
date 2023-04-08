@@ -1,6 +1,7 @@
 (ns mncmd.core
   (:require [cli-matic.core :refer [run-cmd]]
-            [mncmd.stat :as stat])
+            [mncmd.stat :as stat]
+            [mncmd.library :as lib])
   (:gen-class))
 
 (def app-config
@@ -32,7 +33,12 @@
                                 {:as      "Prints a chromagram plot (weighted by duration) of the score (and parts with --parts option)."
                                  :option  "chroma-plot"
                                  :type    :with-flag}]
-                  :runs        stat/print-stats}]})
+                  :runs        stat/print-stats}
+                 {:command     "lib"
+                  :description "Manage a library of MusicXML scores"
+                  :subcommands [{:command       "create"
+                                 :description   "Creates a library in the given path."
+                                 :runs lib/create-library}]}]})
 
 (defn -main
   [& args]
