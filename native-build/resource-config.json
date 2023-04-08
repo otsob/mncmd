@@ -2,6 +2,12 @@
   "resources":{
   "includes":[
     {
+      "pattern":"\\QMETA-INF/maven/org.xerial/sqlite-jdbc/pom.properties\\E"
+    }, 
+    {
+      "pattern":"\\QMETA-INF/services/java.sql.Driver\\E"
+    }, 
+    {
       "pattern":"\\Qcli_matic/core.cljc\\E"
     }, 
     {
@@ -135,6 +141,12 @@
     }, 
     {
       "pattern":"\\Qclojure/java/io__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qclojure/java/jdbc.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qclojure/java/jdbc__init.class\\E"
     }, 
     {
       "pattern":"\\Qclojure/main.clj\\E"
@@ -287,6 +299,12 @@
       "pattern":"\\Qmncmd/harmony__init.class\\E"
     }, 
     {
+      "pattern":"\\Qmncmd/library.clj\\E"
+    }, 
+    {
+      "pattern":"\\Qmncmd/library__init.class\\E"
+    }, 
+    {
       "pattern":"\\Qmncmd/score.clj\\E"
     }, 
     {
@@ -306,6 +324,9 @@
     }, 
     {
       "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/sqlite/native/Mac/aarch64/libsqlitejdbc.jnilib\\E"
     }, 
     {
       "pattern":"\\Qorg/wmn4j/io/musicxml/musicxml.xsd\\E"
@@ -393,6 +414,9 @@
     }, 
     {
       "pattern":"\\Qriddley/walk__init.class\\E"
+    }, 
+    {
+      "pattern":"\\Qsqlite-jdbc.properties\\E"
     }
   ]},
   "bundles":[{
