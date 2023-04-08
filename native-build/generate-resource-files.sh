@@ -3,7 +3,7 @@
 # Requires setting GRAALVM_HOME to GraalVM Home directory
 clj -T:build uberjar
 
-MNCMD=./target/mncmd-0.2.0-standalone.jar
+MNCMD=./target/mncmd-0.2.1-standalone.jar
 
 $GRAALVM_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar \
                     $MNCMD stat ./test/resources/multistaff_test_file.musicxml \

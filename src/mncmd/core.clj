@@ -7,7 +7,7 @@
 (def app-config
   {:app         {:command     "mncmd"
                  :description "Command line tool for extracting information from music notation files "
-                 :version     "0.2.0"}
+                 :version     "0.2.1"}
    :commands    [{:command     "stat"
                   :description "Shows file information for the music notation files at given paths"
                   :opts        [{:as     "Prints out counts of notation elements."
