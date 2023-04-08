@@ -1,6 +1,21 @@
 #!/bin/sh
 
-# Requires setting JAVA_HOME to GraalVM Home directory
-
+# Requires setting GRAALVM_HOME to GraalVM Home directory
 clj -T:build uberjar
-$JAVA_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar ./target/mncmd-0.2.0-standalone.jar stat ./test/resources/multistaff_test_file.musicxml --counts --parts --ambitus --key-signature --time-signature --chroma --chroma-plot
+
+MNCMD=./target/mncmd-0.2.0-standalone.jar
+
+$GRAALVM_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar \
+                    $MNCMD stat ./test/resources/multistaff_test_file.musicxml \
+                    --counts --parts --ambitus --key-signature --time-signature --chroma --chroma-plot
+
+$GRAALVM_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar \
+                    $MNCMD lib create ./target/tmp-lib
+
+$GRAALVM_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar \
+                    $MNCMD lib add ./target/tmp-lib ./test/resources/multistaff_test_file.musicxml
+
+$GRAALVM_HOME/bin/java -agentlib:native-image-agent=config-output-dir=./native-build/ -jar \
+                    $MNCMD lib remove ./target/tmp-lib ./target/tmp-lib/TestFile\ Composer/Multistaff\ test\ file.musicxml
+
+clj -T:build clean
