@@ -10,5 +10,5 @@ native-image --report-unsupported-elements-at-runtime \
              -H:ResourceConfigurationFiles=./native-build/resource-config.json \
              -H:ResourceConfigurationFiles=./native-build/wmn4j-resource-config.json \
              -H:ReflectionConfigurationFiles=./native-build/reflect-config.json \
-             -jar ./target/mncmd-0.1.7-standalone.jar \
+             -jar ./target/mncmd-0.2.0-standalone.jar \
              -H:Name=./target/mncmd
