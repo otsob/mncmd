@@ -75,6 +75,14 @@
       (catch Exception e
         (println "Failed to add " score-path " to library " lib-path " due to:" e)))))
 
+(defn- remove-from-lib [lib-path score-path]
+  (let [db (path->db lib-path)]
+    (try
+      (jdbc/delete! db :scores ["path = ?" score-path])
+      (io/delete-file score-path)
+      (catch Exception e
+        (println "Failed to remove " score-path " from library " lib-path " due to:" e)))))
+
 (defn create-library [args]
   (let [path (first (:_arguments args))]
     (init-library! path)))
@@ -83,3 +91,8 @@
   (let [lib-path (first (:_arguments args))
         score-paths (rest (:_arguments args))]
     (run! #(add-to-lib lib-path %) score-paths)))
+
+(defn remove-from-library [args]
+  (let [lib-path (first (:_arguments args))
+        score-paths (rest (:_arguments args))]
+    (run! #(remove-from-lib lib-path %) score-paths)))
