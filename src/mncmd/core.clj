@@ -38,7 +38,10 @@
                   :description "Manage a library of MusicXML scores"
                   :subcommands [{:command       "create"
                                  :description   "Creates a library in the given path."
-                                 :runs lib/create-library}]}]})
+                                 :runs lib/create-library}
+                                {:command       "add"
+                                 :description   "Add files to library. Library path is first argument and the rest are the file paths."
+                                 :runs lib/add-to-library}]}]})
 
 (defn -main
   [& args]
