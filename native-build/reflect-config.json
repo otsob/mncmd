@@ -829,7 +829,8 @@
   "queryAllPublicMethods":true,
   "methods":[
     {"name":"get","parameterTypes":[] }, 
-    {"name":"isPresent","parameterTypes":[] }
+    {"name":"isPresent","parameterTypes":[] }, 
+    {"name":"orElse","parameterTypes":["java.lang.Object"] }
   ]
 },
 {
@@ -893,30 +894,126 @@
   "name":"org.sqlite.JDBC"
 },
 {
-  "name":"org.wmn4j.analysis.harmony.ChromagramBuilder"
+  "name":"org.wmn4j.analysis.harmony.Chromagram",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getValue","parameterTypes":["org.wmn4j.notation.PitchClass"] }]
+},
+{
+  "name":"org.wmn4j.analysis.harmony.ChromagramBuilder",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"add","parameterTypes":["org.wmn4j.notation.Chord"] }, 
+    {"name":"add","parameterTypes":["org.wmn4j.notation.Note"] }
+  ]
 },
 {
   "name":"org.wmn4j.io.musicxml.MusicXmlReader"
 },
 {
-  "name":"org.wmn4j.notation.Chord"
+  "name":"org.wmn4j.notation.Chord",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getNoteCount","parameterTypes":[] }, 
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }
+  ]
 },
 {
-  "name":"org.wmn4j.notation.Note"
+  "name":"org.wmn4j.notation.Duration",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getDenominator","parameterTypes":[] }]
 },
 {
-  "name":"org.wmn4j.notation.Part"
+  "name":"org.wmn4j.notation.Durational",
+  "methods":[
+    {"name":"isChord","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }, 
+    {"name":"toChord","parameterTypes":[] }, 
+    {"name":"toNote","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.KeySignature",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getFlats","parameterTypes":[] }, 
+    {"name":"getSharps","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Measure",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getKeySignature","parameterTypes":[] }, 
+    {"name":"getTimeSignature","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.MultiStaffPart",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getMeasure","parameterTypes":["int","int"] }, 
+    {"name":"getName","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Note",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getPitch","parameterTypes":[] }, 
+    {"name":"isNote","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.Part",
+  "methods":[{"name":"iterator","parameterTypes":[] }]
+},
+{
+  "name":"org.wmn4j.notation.Pitch",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"isHigherThan","parameterTypes":["org.wmn4j.notation.Pitch"] }, 
+    {"name":"isLowerThan","parameterTypes":["org.wmn4j.notation.Pitch"] }
+  ]
 },
 {
   "name":"org.wmn4j.notation.PitchClass"
 },
 {
-  "name":"org.wmn4j.notation.Rest"
+  "name":"org.wmn4j.notation.Rest",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"isRest","parameterTypes":[] }]
 },
 {
   "name":"org.wmn4j.notation.Score",
   "queryAllPublicMethods":true,
-  "methods":[{"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Score$Attribute"] }]
+  "methods":[
+    {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Score$Attribute"] }, 
+    {"name":"getFullMeasureCount","parameterTypes":[] }, 
+    {"name":"getPartCount","parameterTypes":[] }, 
+    {"name":"hasPickupMeasure","parameterTypes":[] }, 
+    {"name":"iterator","parameterTypes":[] }, 
+    {"name":"partwiseIterator","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.SingleStaffPart",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getAttribute","parameterTypes":["org.wmn4j.notation.Part$Attribute"] }, 
+    {"name":"getMeasure","parameterTypes":["int","int"] }, 
+    {"name":"getName","parameterTypes":[] }
+  ]
+},
+{
+  "name":"org.wmn4j.notation.TimeSignature",
+  "queryAllPublicMethods":true,
+  "methods":[
+    {"name":"getBeatCount","parameterTypes":[] }, 
+    {"name":"getBeatDuration","parameterTypes":[] }
+  ]
 },
 {
   "name":"potemkin.collections$eval3",
