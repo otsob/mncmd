@@ -421,6 +421,9 @@
   ]},
   "bundles":[{
       "name":"com.sun.org.apache.xerces.internal.impl.xpath.regex.message",
-      "locales":[""]
+      "locales":[
+        "", 
+        "und"
+      ]
     }]
 }
