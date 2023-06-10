@@ -3,7 +3,7 @@
             [mncmd.score :as score])
   (:import [org.wmn4j.notation Pitch]))
 
-(def score (score/read-score "test/resources/multistaff_test_file.musicxml"))
+(def score (score/read-score "test/resources/multistaff_test_file.musicxml" false))
 
 (deftest test-attributes
   (let [attributes (score/score-attributes score)]

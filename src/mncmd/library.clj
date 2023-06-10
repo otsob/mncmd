@@ -63,8 +63,9 @@
           (read-line))
       title-attr)))
 
-(defn- add-to-lib [lib-path score-path]
-  (let [attributes (-> score-path score/read-score score/score-attributes)
+(defn- add-to-lib [lib-path score-path skip-validation]
+  (let [score (score/read-score score-path skip-validation)
+        attributes (score/score-attributes score)
         composer (get-composer attributes score-path)
         title (get-title attributes score-path)
         lib-score-path (.getCanonicalPath (io/file lib-path composer (str title (mxl-extension score-path))))
@@ -93,7 +94,7 @@
 (defn add-to-library [args]
   (let [lib-path (first (:_arguments args))
         score-paths (rest (:_arguments args))]
-    (run! #(add-to-lib lib-path %) score-paths)))
+    (run! #(add-to-lib lib-path % (:skip-validation args)) score-paths)))
 
 (defn remove-from-library [args]
   (let [lib-path (first (:_arguments args))
