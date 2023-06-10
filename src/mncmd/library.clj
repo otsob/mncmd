@@ -1,4 +1,5 @@
 (ns mncmd.library
+  (:import [java.nio.file Paths])
   (:require [clojure.java.io :as io]
             [clojure.java.jdbc :as jdbc]
             [clojure.string :as str]
@@ -62,8 +63,9 @@
           (read-line))
       title-attr)))
 
-(defn- add-to-lib [lib-path score-path]
-  (let [attributes (-> score-path score/read-score score/score-attributes)
+(defn- add-to-lib [lib-path score-path skip-validation]
+  (let [score (score/read-score score-path skip-validation)
+        attributes (score/score-attributes score)
         composer (get-composer attributes score-path)
         title (get-title attributes score-path)
         lib-score-path (.getCanonicalPath (io/file lib-path composer (str title (mxl-extension score-path))))
@@ -76,12 +78,14 @@
         (println "Failed to add " score-path " to library " lib-path " due to:" e)))))
 
 (defn- remove-from-lib [lib-path score-path]
-  (let [db (path->db lib-path)]
+  (let [db (path->db lib-path)
+        path-obj (Paths/get score-path (into-array [""]))
+        abs-score-path (.toAbsolutePath path-obj)]
     (try
-      (jdbc/delete! db :scores ["path = ?" score-path])
+      (jdbc/delete! db :scores ["path = ?" abs-score-path])
       (io/delete-file score-path)
       (catch Exception e
-        (println "Failed to remove " score-path " from library " lib-path " due to:" e)))))
+        (println "Failed to remove " abs-score-path " from library " lib-path " due to:" e)))))
 
 (defn create-library [args]
   (let [path (first (:_arguments args))]
@@ -90,7 +94,7 @@
 (defn add-to-library [args]
   (let [lib-path (first (:_arguments args))
         score-paths (rest (:_arguments args))]
-    (run! #(add-to-lib lib-path %) score-paths)))
+    (run! #(add-to-lib lib-path % (:skip-validation args)) score-paths)))
 
 (defn remove-from-library [args]
   (let [lib-path (first (:_arguments args))

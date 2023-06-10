@@ -4,11 +4,13 @@
            [org.wmn4j.io.musicxml MusicXmlReader])
   (:gen-class))
 
-(defn read-score [path]
+(defn read-score [path skip-validation]
   ;; The into-array trick is used to just force the String param overload of Paths.get
   (let [path-obj (Paths/get path (into-array [""]))
         abs-path (.toAbsolutePath path-obj)
-        reader (MusicXmlReader/readerFor abs-path)]
+        reader (if skip-validation
+                 (MusicXmlReader/nonValidatingReaderFor abs-path)
+                 (MusicXmlReader/readerFor abs-path))]
     (try
       (.readScore reader)
       (catch Exception e (println (str "Failed to open " abs-path ": " (.getMessage e))))

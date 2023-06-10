@@ -102,7 +102,7 @@
     (stat-row "Chromagram" chroma)))
 
 (defn- print-score-stat [path args]
-  (if-let [score (score/read-score path)]
+  (if-let [score (score/read-score path (:skip-validation args))]
     (do
       (print (stat-row "Score path" path))
       (print (basic-stat score))
