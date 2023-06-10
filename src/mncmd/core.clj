@@ -44,7 +44,7 @@
                                  :runs lib/add-to-library}
                                 {:command       "remove"
                                  :description   "Remove files from a library. Library path is first argument and the rest are the file paths."
-                                 :runs lib/add-to-library}]}]})
+                                 :runs lib/remove-from-library}]}]})
 
 (defn -main
   [& args]

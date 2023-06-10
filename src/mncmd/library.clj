@@ -1,4 +1,5 @@
 (ns mncmd.library
+  (:import [java.nio.file Paths])
   (:require [clojure.java.io :as io]
             [clojure.java.jdbc :as jdbc]
             [clojure.string :as str]
@@ -76,12 +77,14 @@
         (println "Failed to add " score-path " to library " lib-path " due to:" e)))))
 
 (defn- remove-from-lib [lib-path score-path]
-  (let [db (path->db lib-path)]
+  (let [db (path->db lib-path)
+        path-obj (Paths/get score-path (into-array [""]))
+        abs-score-path (.toAbsolutePath path-obj)]
     (try
-      (jdbc/delete! db :scores ["path = ?" score-path])
+      (jdbc/delete! db :scores ["path = ?" abs-score-path])
       (io/delete-file score-path)
       (catch Exception e
-        (println "Failed to remove " score-path " from library " lib-path " due to:" e)))))
+        (println "Failed to remove " abs-score-path " from library " lib-path " due to:" e)))))
 
 (defn create-library [args]
   (let [path (first (:_arguments args))]
