@@ -1,6 +1,6 @@
 {:paths ["src"]
  :deps
- {org.wmn4j/wmn4j {:mvn/version "0.7.1"}
+ {org.wmn4j/wmn4j {:mvn/version "0.7.4"}
   org.slf4j/slf4j-jdk14 {:mvn/version "1.7.36"}
   cli-matic/cli-matic {:mvn/version "0.5.4"}
   org.clojars.rorokimdim/pp-grid {:mvn/version "0.1.15"}
