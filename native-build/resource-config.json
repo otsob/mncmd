@@ -1,429 +1,380 @@
 {
   "resources":{
-  "includes":[
-    {
-      "pattern":"\\QMETA-INF/maven/org.xerial/sqlite-jdbc/pom.properties\\E"
-    }, 
-    {
-      "pattern":"\\QMETA-INF/services/java.sql.Driver\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/core.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/core__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/help_gen.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/help_gen__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/optionals.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/optionals__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/platform.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/platform__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/platform_macros.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/platform_macros__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/presets.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/presets__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/specs.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/specs__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils_candidates.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils_candidates__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils_v2.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qcli_matic/utils_v2__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclj_tuple.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclj_tuple__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core/protocols.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core/protocols__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core/server.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core/server__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core/specs/alpha.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_deftype.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_deftype__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_print.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_print__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_proxy.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/core_proxy__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/edn.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/edn__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/genclass.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/genclass__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/gvec.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/gvec__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/instant.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/instant__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/java/io.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/java/io__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/java/jdbc.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/java/jdbc__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/main.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/main__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/cl_format.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/cl_format__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/column_writer.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/column_writer__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/dispatch.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/dispatch__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/pprint_base.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/pprint_base__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/pretty_writer.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/pretty_writer__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/print_table.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/print_table__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/utilities.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint/utilities__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/pprint__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/set.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/set__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/spec/alpha.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/spec/alpha__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/spec/gen/alpha.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/spec/gen/alpha__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/string.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/string__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/tools/cli.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/tools/cli__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/uuid.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/uuid__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/version.properties\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/walk.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qclojure/walk__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qdata_readers.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/alpha.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/alpha__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/ansi.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/ansi__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/paths.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/paths__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/printer.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/printer__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/problems.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/problems__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/util.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qexpound/util__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/core.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/core__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/harmony.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/harmony__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/library.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/library__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/score.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/score__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/stat.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/stat__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/visual.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qmncmd/visual__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/sqlite/native/Mac/aarch64/libsqlitejdbc.jnilib\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/wmn4j/io/musicxml/musicxml.xsd\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/collections.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/collections__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/macros.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/macros__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/namespaces.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/namespaces__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/types.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/types__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/utils.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/utils__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/walk.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin/walk__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpotemkin__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/ansi_escape_code.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/ansi_escape_code__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/api.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/api__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/core.cljc\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/core__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/layout.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/layout__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/object.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qpp_grid/object__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qriddley/compiler.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qriddley/compiler__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qriddley/walk.clj\\E"
-    }, 
-    {
-      "pattern":"\\Qriddley/walk__init.class\\E"
-    }, 
-    {
-      "pattern":"\\Qsqlite-jdbc.properties\\E"
-    }
-  ]},
+  "includes":[{
+    "pattern":"\\QMETA-INF/maven/org.xerial/sqlite-jdbc/pom.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.lang.System$LoggerFinder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.nio.file.spi.FileTypeDetector\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.sql.Driver\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/javax.xml.stream.XMLInputFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/javax.xml.validation.SchemaFactory\\E"
+  }, {
+    "pattern":"\\Qcheshire/core.clj\\E"
+  }, {
+    "pattern":"\\Qcheshire/core.cljc\\E"
+  }, {
+    "pattern":"\\Qcheshire/core__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/core.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/core.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/core__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/help_gen.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/help_gen.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/help_gen__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/optionals.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/optionals__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/platform.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/platform__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/platform_macros.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/platform_macros.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/platform_macros__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/presets.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/presets.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/presets__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/specs.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/specs.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/specs__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_candidates.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_candidates.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_candidates__init.class\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_v2.clj\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_v2.cljc\\E"
+  }, {
+    "pattern":"\\Qcli_matic/utils_v2__init.class\\E"
+  }, {
+    "pattern":"\\Qclj_tuple.clj\\E"
+  }, {
+    "pattern":"\\Qclj_tuple__init.class\\E"
+  }, {
+    "pattern":"\\Qclj_yaml/core.clj\\E"
+  }, {
+    "pattern":"\\Qclj_yaml/core.cljc\\E"
+  }, {
+    "pattern":"\\Qclj_yaml/core__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core/async/impl/channels.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core/async/impl/channels.cljc\\E"
+  }, {
+    "pattern":"\\Qclojure/core/async/impl/channels__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core/protocols.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core/protocols__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core/server.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core/server__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core/specs/alpha.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core/specs/alpha__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core_deftype.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core_deftype__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core_print.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core_print__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/core_proxy.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/core_proxy__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/edn.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/edn__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/genclass.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/genclass__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/gvec.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/gvec__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/instant.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/instant__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/java/io.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/java/io__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/java/jdbc.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/java/jdbc__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/main.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/main__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/cl_format.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/cl_format__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/column_writer.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/column_writer__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/dispatch.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/dispatch__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/pprint_base.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/pprint_base__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/pretty_writer.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/pretty_writer__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/print_table.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/print_table__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/utilities.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint/utilities__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/pprint__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/set.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/set__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/spec/alpha.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/spec/alpha__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/spec/gen/alpha.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/spec/gen/alpha__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/string.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/string__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/tools/cli.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/tools/cli.cljc\\E"
+  }, {
+    "pattern":"\\Qclojure/tools/cli__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/uuid.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/uuid__init.class\\E"
+  }, {
+    "pattern":"\\Qclojure/version.properties\\E"
+  }, {
+    "pattern":"\\Qclojure/walk.clj\\E"
+  }, {
+    "pattern":"\\Qclojure/walk__init.class\\E"
+  }, {
+    "pattern":"\\Qdata_readers.clj\\E"
+  }, {
+    "pattern":"\\Qdata_readers.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/alpha.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/alpha.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/alpha__init.class\\E"
+  }, {
+    "pattern":"\\Qexpound/ansi.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/ansi.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/ansi__init.class\\E"
+  }, {
+    "pattern":"\\Qexpound/paths.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/paths.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/paths__init.class\\E"
+  }, {
+    "pattern":"\\Qexpound/printer.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/printer.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/printer__init.class\\E"
+  }, {
+    "pattern":"\\Qexpound/problems.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/problems.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/problems__init.class\\E"
+  }, {
+    "pattern":"\\Qexpound/util.clj\\E"
+  }, {
+    "pattern":"\\Qexpound/util.cljc\\E"
+  }, {
+    "pattern":"\\Qexpound/util__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/core.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/core__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/harmony.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/harmony__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/library.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/library__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/score.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/score__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/stat.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/stat__init.class\\E"
+  }, {
+    "pattern":"\\Qmncmd/visual.clj\\E"
+  }, {
+    "pattern":"\\Qmncmd/visual__init.class\\E"
+  }, {
+    "pattern":"\\Qorchestra/spec/test.clj\\E"
+  }, {
+    "pattern":"\\Qorchestra/spec/test.cljc\\E"
+  }, {
+    "pattern":"\\Qorchestra/spec/test__init.class\\E"
+  }, {
+    "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
+  }, {
+    "pattern":"\\Qorg/sqlite/native/Mac/aarch64/libsqlitejdbc.jnilib\\E"
+  }, {
+    "pattern":"\\Qorg/wmn4j/analysis/harmony/KSKeyProfiles.csv\\E"
+  }, {
+    "pattern":"\\Qorg/wmn4j/io/musicxml/musicxml.xsd\\E"
+  }, {
+    "pattern":"\\Qorg/wmn4j/io/musicxml/xlink.xsd\\E"
+  }, {
+    "pattern":"\\Qorg/wmn4j/io/musicxml/xml.xsd\\E"
+  }, {
+    "pattern":"\\Qpotemkin.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/collections.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/collections__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin/macros.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/macros__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin/namespaces.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/namespaces__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin/types.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/types__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin/utils.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/utils__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin/walk.clj\\E"
+  }, {
+    "pattern":"\\Qpotemkin/walk__init.class\\E"
+  }, {
+    "pattern":"\\Qpotemkin__init.class\\E"
+  }, {
+    "pattern":"\\Qpp_grid/ansi_escape_code.clj\\E"
+  }, {
+    "pattern":"\\Qpp_grid/ansi_escape_code__init.class\\E"
+  }, {
+    "pattern":"\\Qpp_grid/api.clj\\E"
+  }, {
+    "pattern":"\\Qpp_grid/api.cljc\\E"
+  }, {
+    "pattern":"\\Qpp_grid/api__init.class\\E"
+  }, {
+    "pattern":"\\Qpp_grid/core.clj\\E"
+  }, {
+    "pattern":"\\Qpp_grid/core.cljc\\E"
+  }, {
+    "pattern":"\\Qpp_grid/core__init.class\\E"
+  }, {
+    "pattern":"\\Qpp_grid/layout.clj\\E"
+  }, {
+    "pattern":"\\Qpp_grid/layout__init.class\\E"
+  }, {
+    "pattern":"\\Qpp_grid/object.clj\\E"
+  }, {
+    "pattern":"\\Qpp_grid/object__init.class\\E"
+  }, {
+    "pattern":"\\Qriddley/compiler.clj\\E"
+  }, {
+    "pattern":"\\Qriddley/compiler__init.class\\E"
+  }, {
+    "pattern":"\\Qriddley/walk.clj\\E"
+  }, {
+    "pattern":"\\Qriddley/walk__init.class\\E"
+  }, {
+    "pattern":"\\Qsqlite-jdbc.properties\\E"
+  }, {
+    "pattern":"\\Quser.clj\\E"
+  }, {
+    "pattern":"java.base:\\Qsun/net/www/content-types.properties\\E"
+  }, {
+    "pattern":"java.xml:\\Qcom/sun/org/apache/xerces/internal/impl/xpath/regex/message.properties\\E"
+  }, {
+    "pattern":"java.xml:\\Qcom/sun/org/apache/xerces/internal/impl/xpath/regex/message_en.properties\\E"
+  }, {
+    "pattern":"java.xml:\\Qcom/sun/org/apache/xerces/internal/impl/xpath/regex/message_en_FI.properties\\E"
+  }, {
+    "pattern":"java.xml:\\Qjdk/xml/internal/jdkcatalog/JDKCatalog.xml\\E"
+  }]},
   "bundles":[{
-      "name":"com.sun.org.apache.xerces.internal.impl.xpath.regex.message",
-      "locales":[
-        "", 
-        "und"
-      ]
-    }]
+    "name":"com.sun.org.apache.xerces.internal.impl.xpath.regex.message",
+    "locales":["en-FI", "und"]
+  }, {
+    "name":"sun.text.resources.cldr.FormatData",
+    "locales":["en", "en-001", "en-150", "en-FI", "und"]
+  }, {
+    "name":"sun.util.resources.cldr.CalendarData",
+    "locales":["und"]
+  }]
 }
