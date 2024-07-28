@@ -10,19 +10,17 @@ Currently supports only reading MusicXML files.
 
 Building `mncmd` requires:
 
-- Java (tested with version 17)
+- GraalVM and native image (tested with 22.0.2)
 - Clojure (tested with version 1.11)
-- Leiningen (tested with version 2.9.8)
-- GraalVM and native image (tested with 22.1.0)
-- [Dependencies](./project.clj)
 
 ## Building/installing mncmd
 
-To build a native executable, run [native-build/build.sh](native-build/build.sh). The executable can be found in the `target` directory. Place the executable where you want to keep it, and create a suitable alias for it.
+To build a native executable, run `clj -T:build native-image`. The executable can be found in the `target` directory.
+Place the executable where you want to keep it, and create a suitable alias for it.
 
-If there are changes to the code, the Graal native image resource files may need to be regenerated.
-This is achieved by running [native-build/generate-resource-files.sh](./native-build/generate-resource-files.sh) (with GraalVM set as the JVM).
-Incrementing the version number of `mncmd` is done using [bump2version](https://github.com/c4urself/bump2version/#installation).
+If there are changes to the code that change the use of dependencies, the Graal native image resource files may need to be regenerated.
+This is achieved by running `clj -T:build graal-config-files`.
+Incrementing the version number of `mncmd` can be done using [bump2version](https://github.com/c4urself/bump2version/#installation).
 
 ## Usage
 
