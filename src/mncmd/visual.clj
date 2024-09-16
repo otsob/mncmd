@@ -1,6 +1,7 @@
 (ns mncmd.visual
   (:import [org.wmn4j.notation PitchClass])
-  (:require [pp-grid.api :as g]))
+  (:require [pp-grid.api :as g])
+  (:gen-class))
 
 (def ^:private pitch-classes (PitchClass/values))
 
