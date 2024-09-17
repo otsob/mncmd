@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test-native-image:
+  build-native-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +30,7 @@ jobs:
   bump-version:
     permissions:
       contents: write
-    needs: lint-and-test
+    needs: build-native-image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
