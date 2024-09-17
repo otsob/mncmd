@@ -25,3 +25,6 @@ jobs:
 
       - name: Unit tests
         run: clojure -X:test
+
+      - name: Native build
+        run: clojure -T:build native-image && ./target/mncmd stat test/resources/multistaff_test_file.musicxml
