@@ -1,16 +1,16 @@
 {:paths ["src"]
  :deps
- {org.wmn4j/wmn4j {:mvn/version "0.7.1"}
+ {org.wmn4j/wmn4j {:mvn/version "0.7.4"}
   org.slf4j/slf4j-jdk14 {:mvn/version "1.7.36"}
   cli-matic/cli-matic {:mvn/version "0.5.4"}
-  org.clojars.rorokimdim/pp-grid {:mvn/version "0.1.15"}
+  org.clojars.rorokimdim/pp-grid {:mvn/version "0.1.18"}
   org.clojure/java.jdbc {:mvn/version "0.7.12"}
-  org.xerial/sqlite-jdbc {:mvn/version "3.41.2.1"}}
+  org.xerial/sqlite-jdbc {:mvn/version "3.41.2.1"}
+  com.github.clj-easy/graal-build-time {:mvn/version "1.0.5"}}
 
  :aliases
  {:build
-  {:deps {io.github.clojure/tools.build
-          {:git/tag "v0.9.1" :git/sha "27ff8a4"}}
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.9.1" :git/sha "27ff8a4"}}
    :ns-default build}
 
   :test
