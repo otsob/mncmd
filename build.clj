@@ -3,7 +3,7 @@
             [clojure.java.shell :refer [sh]]))
 
 (def project 'project/mncmd)
-(def version "0.2.4")
+(def version "0.2.5")
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn"}))
 (def uber-file (format "target/%s-%s-standalone.jar" (name project) version))
